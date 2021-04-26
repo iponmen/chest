@@ -1,7 +1,4 @@
-text = ["Bking", "Bqueen", "Bbishop", "Bknight", "Bpawn", "Brook", "Wking", "Wqueen", "Wbishop", "Wknight", "Wpawn", "Wrook"]
-emoji = ["♔", "♕", "♗", "♘", "♟", "♖", "♚", "♛", "♝", "♞", "♙", "♜"]
+def dod(inte):
+    print(inte)
 
-dic = {}
-for i in range(len(text)):
-    dic[text[i]] = emoji[i]
-print (dic)
+eval("wdod"[1:]+"("+"\'wryy\'"+")")

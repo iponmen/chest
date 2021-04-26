@@ -89,16 +89,22 @@ def printBoard():
     return bordFin
 
 def databaseMove(fromCord, toCord):
-    if not inBord(fromCord) and not toCord(toCord):
+    temp=""
+    if(piece(fromCord)==""):
         return False
-    
-    board[toCord[0]][toCord[1]] = board[fromCord[0]][fromCord[1]]
-    board[fromCord[0]][fromCord[1]] = ""
-    return True
+    print(eval(piece(fromCord)[1:]+"(toCord)"))
+    print(toCord in eval(piece(fromCord)[1:]+"(toCord)"))
+    if(toCord in eval(piece(fromCord)[1:]+"(toCord)")):
+        temp=board[toCord[0]][toCord[1]]
+        board[toCord[0]][toCord[1]]=piece(fromCord)
+        return temp
+    return False
     
 """
 return "B" or "W"
 """
+def piece(cord):return(board[cord[0]][cord[1]])
+
 def side(piece):
     return piece[0]
     
@@ -303,10 +309,12 @@ def queen():
 
 #def start():
     
+print(piece([6,6]))
+print(printBoard())
+print(databaseMove([6,6],[6,6]))
+print(printBoard())
 
-print(printBoard())
-print(databaseMove([4,1],[4,1]))
-print(printBoard())
+#print(board)
 
 """
 discordId="833059436192989214"
