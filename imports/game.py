@@ -1,6 +1,8 @@
+import asyncio
 import glb
 from imports import general
 from imports import pieces
+from threading import Thread
 
 def reset():
     glb.board = glb.boardInitState
@@ -12,8 +14,9 @@ def reset():
 
 # can add timer    
 def start():
-    print("game starte")
+    print("game started")
     reset()
+    asyncio.create_task(glb.clientDup.get_channel(843214787856957460).send("Game Restarted !!! -------------------------------------\n\n"+general.printBoard()));
 
 # check for winning conditions and stuff everytime anything updates
 def tick():

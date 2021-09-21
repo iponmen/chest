@@ -5,6 +5,12 @@
 global running
 running = True
 
+global clientDup
+clientDup = None
+
+global channel1
+channel1 = None
+
 global directions
 directions = {
     "up": 1,

@@ -6,7 +6,7 @@ import random
 import glb
 import control
 from imports import pieces
-from imports import action
+# from imports import action
 from imports import debugging
 from imports import general
 from imports import game
@@ -32,6 +32,7 @@ client = discord.Client()
 @client.event
 async def on_ready():
     channel1 = client.get_channel(843214787856957460)
+    glb.clientDup = client
     print('We have logged in as {0.user}'.format(client))
     await channel1.send(general.printBoard())
 
